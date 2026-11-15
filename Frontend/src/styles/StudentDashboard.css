@@ -1,0 +1,420 @@
+/* Campus Care — Student Dashboard styles */
+
+:root {
+  --sd-primary: #2c2c8a;
+  --sd-primary-light: #eceafd;
+  --sd-bg: #f5f5f8;
+  --sd-surface: #ffffff;
+  --sd-border: #e2e2ea;
+  --sd-text: #1a1a2e;
+  --sd-text-secondary: #6b6b7b;
+  --sd-danger: #c0392b;
+  --sd-radius: 10px;
+}
+
+.dashboard-dark {
+  --sd-bg: #0f1117;
+  --sd-surface: #171a23;
+  --sd-border: #2a2d3a;
+  --sd-text: #f2f2f5;
+  --sd-text-secondary: #9a9ba8;
+  --sd-primary-light: rgba(108, 108, 220, 0.18);
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  background: var(--sd-bg);
+  color: var(--sd-text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  height: 64px;
+  background: var(--sd-surface);
+  border-bottom: 1px solid var(--sd-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #fff; /* remove if mits.png has no transparent padding needs */
+}
+
+.navbar-brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sd-text);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  color: var(--sd-text-secondary);
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navbar-link:hover {
+  background: var(--sd-bg);
+  color: var(--sd-text);
+}
+
+.navbar-link.active {
+  background: var(--sd-primary-light);
+  color: var(--sd-primary);
+  font-weight: 600;
+}
+
+.navbar-link-label {
+  white-space: nowrap;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--sd-border);
+  background: var(--sd-surface);
+  color: var(--sd-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.navbar-icon-btn:hover {
+  background: var(--sd-bg);
+}
+
+.navbar-profile {
+  position: relative;
+}
+
+.navbar-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sd-primary-light);
+  color: var(--sd-primary);
+  border: 1px solid var(--sd-border);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.navbar-dropdown {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  width: 200px;
+  background: var(--sd-surface);
+  border: 1px solid var(--sd-border);
+  border-radius: var(--sd-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.navbar-dropdown-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--sd-border);
+}
+
+.navbar-dropdown-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--sd-text);
+}
+
+.navbar-dropdown-roll {
+  font-size: 12px;
+  color: var(--sd-text-secondary);
+  margin: 2px 0 0;
+}
+
+.navbar-dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--sd-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.navbar-dropdown-item:hover {
+  background: var(--sd-bg);
+}
+
+.navbar-dropdown-item.danger {
+  color: var(--sd-danger);
+}
+
+/* ==========================================================
+   Student Change Password page
+   ========================================================== */
+
+.cp-page-center {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+}
+
+.cp-card {
+  max-width: 480px;
+  width: 100%;
+}
+
+.cp-subtitle {
+  font-size: 13px;
+  color: #6b6b7b;
+  margin: 4px 0 18px;
+}
+
+.cp-required-mark {
+  color: #c0392b;
+}
+
+.cp-policy {
+  background: #e6f7ed;
+  border: 1px solid #c9e8d4;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.cp-policy-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #1f2340;
+}
+
+.cp-policy ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cp-policy li {
+  font-size: 12.5px;
+  color: #6b6b7b;
+}
+
+.cp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1f2340;
+}
+
+.cp-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e6e6ee);
+  font-size: 13.5px;
+  background: #fff;
+  color: #1f2340;
+}
+
+.cp-field input:focus {
+  outline: none;
+  border-color: #5b4fe0;
+  box-shadow: 0 0 0 3px rgba(91, 79, 224, 0.12);
+}
+
+.cp-error {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.cp-success {
+  color: #1c8a4b;
+  background: #e6f7ed;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin: 0;
+}
+
+.cp-submit-btn {
+  align-self: flex-start;
+  padding: 10px 22px;
+}
+
+/* Dark mode support, matching StudentDashboard.css's .dashboard-dark pattern */
+.dashboard-dark .cp-field input {
+  background: #1b1d2a;
+  color: #f1f2f8;
+  border-color: #2e3142;
+}
+
+.dashboard-dark .cp-policy {
+  background: #103a26;
+  border-color: #1c5a3d;
+}
+
+.dashboard-dark .cp-policy-title {
+  color: #f1f2f8;
+}
+/* ---------- Dashboard content ---------- */
+
+.dashboard-content {
+  padding: 28px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard-welcome-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.dashboard-welcome-subtitle {
+  font-size: 13px;
+  color: var(--sd-text-secondary);
+  margin: 0;
+}
+
+.dashboard-cta {
+  background: var(--sd-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard-stat-card {
+  background: var(--sd-surface);
+  border: 1px solid var(--sd-border);
+  border-radius: var(--sd-radius);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.dashboard-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sd-primary-light);
+  color: var(--sd-primary);
+  flex-shrink: 0;
+}
+
+.dashboard-stat-label {
+  font-size: 12px;
+  color: var(--sd-text-secondary);
+  margin: 0 0 2px;
+}
+
+.dashboard-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dashboard-section {
+  background: var(--sd-surface);
+  border: 1px solid var(--sd-border);
+  border-radius: var(--sd-radius);
+  padding: 20px;
+}
+
+.dashboard-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 768px) {
+  .navbar-link-label {
+    display: none;
+  }
+  .navbar-links {
+    gap: 2px;
+  }
+  .navbar-link {
+    padding: 8px 10px;
+  }
+}

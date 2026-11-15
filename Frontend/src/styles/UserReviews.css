@@ -1,0 +1,112 @@
+.admin-review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.admin-review-card {
+  border: 1px solid var(--ad-border);
+  border-radius: var(--ad-radius);
+  padding: 16px;
+  background: var(--ad-bg);
+}
+
+.admin-review-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.admin-review-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ad-text);
+  margin: 0;
+}
+
+.admin-review-role {
+  font-size: 11px;
+  text-transform: capitalize;
+  color: var(--ad-text-secondary);
+  margin: 2px 0 0;
+}
+
+.admin-review-stars {
+  color: #dd8b1f;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.admin-review-comment {
+  font-size: 13px;
+  color: var(--ad-text);
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+.admin-review-date {
+  font-size: 11px;
+  color: var(--ad-text-secondary);
+  margin: 0;
+}
+/* ---------- Feedback analytics stats (add to UserReviews.css) ---------- */
+
+.admin-review-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin: 16px 0 4px;
+}
+
+.admin-review-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  background: #f8f9fc;
+}
+
+.admin-review-stat-card-warning {
+  background: #fdeaea;
+  border-color: #f5c6c6;
+}
+
+.admin-review-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2340;
+}
+
+.admin-review-stat-card-warning .admin-review-stat-value {
+  color: #c0392b;
+}
+
+.admin-review-stat-label {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.admin-review-complaint-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #1f2340;
+  margin: 8px 0 2px;
+}
+
+.admin-review-complaint-meta {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 0 0 8px;
+}
+
+.admin-review-close-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+}

@@ -1,0 +1,133 @@
+/* Campus Care — My Complaints table styles */
+
+.mc-card {
+  background: var(--sd-surface);
+  border: 1px solid var(--sd-border);
+  border-radius: 14px;
+  padding: 28px 32px;
+}
+
+.mc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mc-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sd-primary);
+  margin: 0;
+}
+
+.mc-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mc-filter-btn {
+  border: 1px solid var(--sd-border);
+  background: var(--sd-bg);
+  color: var(--sd-text-secondary);
+  font-size: 12.5px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mc-filter-btn:hover {
+  background: var(--sd-primary-light);
+}
+
+.mc-filter-btn.active {
+  background: var(--sd-primary);
+  border-color: var(--sd-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.mc-table-wrap {
+  overflow-x: auto;
+}
+
+.mc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.mc-table thead th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sd-text-secondary);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--sd-border);
+  white-space: nowrap;
+}
+
+.mc-table tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--sd-border);
+  color: var(--sd-text);
+  vertical-align: middle;
+}
+
+.mc-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.mc-table tbody tr:hover {
+  background: var(--sd-bg);
+}
+
+.mc-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.mc-badge-pending {
+  background: #e8a33d;
+}
+
+.mc-badge-progress {
+  background: #3b82c4;
+}
+
+.mc-badge-completed {
+  background: #3fb27f;
+}
+
+.mc-empty {
+  font-size: 13.5px;
+  color: var(--sd-text-secondary);
+  text-align: center;
+  padding: 32px 0;
+}
+
+.mc-table-muted {
+  color: var(--text-secondary, #6b6b7b);
+  font-size: 12.5px;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .mc-card {
+    padding: 20px;
+  }
+  .mc-table {
+    font-size: 12.5px;
+  }
+}

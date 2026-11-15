@@ -1,0 +1,223 @@
+/* ==========================================================
+   Reports & Analytics page
+   ========================================================== */
+
+.admin-section-subtitle {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* ---------- KPI cards ---------- */
+
+.ar-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.ar-kpi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 16px;
+  background: #f8f9fc;
+}
+
+.ar-kpi-card-accent {
+  background: linear-gradient(135deg, #5b4fe0, #8b7ff5);
+  border-color: transparent;
+}
+
+.ar-kpi-card-accent .ar-kpi-value,
+.ar-kpi-card-accent .ar-kpi-label {
+  color: #fff;
+}
+
+.ar-kpi-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #1f2340;
+  line-height: 1.1;
+}
+
+.ar-kpi-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+/* ---------- Two-column panel layout ---------- */
+
+.ar-two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ar-panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+
+.ar-panel-title {
+  margin: 0 0 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2340;
+}
+
+/* ---------- Donut chart ---------- */
+
+.ar-donut-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ar-donut {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ar-donut-center {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ar-donut-center-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2340;
+}
+
+.ar-donut-center-label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.ar-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.ar-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.ar-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ar-legend-label {
+  flex: 1;
+  color: #1f2340;
+  font-weight: 500;
+}
+
+.ar-legend-value {
+  font-weight: 700;
+  color: #1f2340;
+}
+
+/* ---------- Bar lists (priority, categories, trades) ---------- */
+
+.ar-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ar-bar-row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1f2340;
+  margin-bottom: 5px;
+}
+
+.ar-bar-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #eef0f5;
+  overflow: hidden;
+}
+
+.ar-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.ar-bar-fill-primary {
+  background: #5b4fe0;
+}
+
+/* ---------- Team capacity ---------- */
+
+.ar-team-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.ar-team-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  background: #f8f9fc;
+  text-align: center;
+}
+
+.ar-team-stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #5b4fe0;
+}
+
+.ar-team-stat-label {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .ar-donut-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

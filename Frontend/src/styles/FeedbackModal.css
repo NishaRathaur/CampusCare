@@ -1,0 +1,238 @@
+/* Campus Care — Feedback modal styles */
+
+.fb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 17, 23, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.fb-modal {
+  background: var(--sd-surface, #fff);
+  border-radius: 16px;
+  padding: 24px 26px 22px;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.fb-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: var(--sd-text-secondary, #6b6b7b);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.fb-close:hover {
+  color: var(--sd-text, #1a1a2e);
+}
+
+.fb-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.fb-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--sd-primary, #2c2c8a);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fb-header-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--sd-text, #1a1a2e);
+  margin: 0;
+}
+
+.fb-header-subtitle {
+  font-size: 11.5px;
+  color: var(--sd-text-secondary, #6b6b7b);
+  margin: 1px 0 0;
+}
+
+.fb-section-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sd-text-secondary, #6b6b7b);
+  margin: 0 0 4px;
+}
+
+.fb-complaint-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sd-text, #1a1a2e);
+  margin: 0 0 8px;
+}
+
+.fb-complaint-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.fb-complaint-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--sd-text-secondary, #6b6b7b);
+}
+
+.fb-category-tag {
+  background: var(--sd-primary-light, #eceafd);
+  color: var(--sd-primary, #2c2c8a);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fb-stars {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 8px 0 4px;
+}
+
+.fb-star-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  color: #d8d8e2;
+  transition: transform 0.1s ease;
+}
+
+.fb-star-btn:hover {
+  transform: scale(1.08);
+}
+
+.fb-star-filled {
+  color: #6c4de6;
+}
+
+.fb-star-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sd-primary, #2c2c8a);
+  margin: 0 0 14px;
+}
+
+.fb-comment {
+  width: 100%;
+  border: 1px solid var(--sd-border, #e2e2ea);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  background: var(--sd-bg, #f5f5f8);
+  color: var(--sd-text, #1a1a2e);
+  margin-bottom: 6px;
+}
+
+.fb-comment:focus {
+  outline: none;
+  border-color: var(--sd-primary, #2c2c8a);
+}
+
+.fb-error {
+  font-size: 12px;
+  color: #c0392b;
+  margin: 4px 0 0;
+}
+
+.fb-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.fb-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--sd-border, #e2e2ea);
+  color: var(--sd-text, #1a1a2e);
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fb-btn-secondary:hover {
+  background: var(--sd-bg, #f5f5f8);
+}
+
+.fb-btn-primary {
+  background: var(--sd-primary, #2c2c8a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fb-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.fb-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* ---------- Proof photo step (append to FeedbackModal.css) ---------- */
+
+.fb-photo-wrap {
+  margin: 14px 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e6e6ee;
+  background: #000;
+  max-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fb-photo-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+}
+
+.fb-photo-caption {
+  font-size: 12.5px;
+  color: #6b6b7b;
+  margin: 0 0 18px;
+  text-align: center;
+}

@@ -1,0 +1,610 @@
+/* Campus Care — Admin Dashboard styles */
+
+:root {
+  --ad-sidebar-bg: #1b1a2e;
+  --ad-sidebar-text: #b7b5cf;
+  --ad-sidebar-text-active: #ffffff;
+  --ad-sidebar-active-bg: #6c4de6;
+  --ad-primary: #6c4de6;
+  --ad-primary-light: #efeafd;
+  --ad-bg: #f5f5f8;
+  --ad-surface: #ffffff;
+  --ad-border: #e6e6ee;
+  --ad-text: #1a1a2e;
+  --ad-text-secondary: #6b6b7b;
+  --ad-radius: 10px;
+  --ad-sidebar-width: 230px;
+}
+
+/* Dark mode override — toggled via the moon/sun button in the topbar */
+.admin-dark {
+  --ad-bg: #0f1117;
+  --ad-surface: #171a23;
+  --ad-border: #2a2d3a;
+  --ad-text: #f2f2f5;
+  --ad-text-secondary: #9a9ba8;
+  --ad-primary-light: rgba(108, 77, 230, 0.18);
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--ad-bg);
+  transition: background 0.2s ease;
+}
+
+/* ---------- Sidebar ---------- */
+
+.admin-sidebar {
+  width: var(--ad-sidebar-width);
+  background: var(--ad-sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 20px;
+  cursor: pointer;
+}
+
+.admin-sidebar-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  object-fit: contain;
+  background: #fff; /* drop this if mits.png shouldn't sit on a white plate */
+}
+
+.admin-sidebar-brand-text {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.admin-sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.admin-sidebar-section {
+  margin-bottom: 6px;
+}
+
+.admin-sidebar-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6f6d8c;
+  padding: 14px 12px 4px;
+  margin: 0;
+}
+
+.admin-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--ad-sidebar-text);
+  font-size: 13.5px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.admin-sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ad-sidebar-text-active);
+}
+
+.admin-sidebar-item.active {
+  background: var(--ad-sidebar-active-bg);
+  color: #fff;
+  font-weight: 600;
+}
+
+.admin-sidebar-logout {
+  color: #f2a3a3;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 10px;
+  padding-top: 14px;
+}
+
+.admin-sidebar-logout:hover {
+  background: rgba(240, 100, 100, 0.12);
+  color: #ffb3b3;
+}
+
+/* ---------- Main content area ---------- */
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-topbar {
+  background: var(--ad-surface);
+  border-bottom: 1px solid var(--ad-border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.admin-topbar-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--ad-text);
+  margin: 0 0 2px;
+}
+
+.admin-topbar-tagline {
+  font-size: 12.5px;
+  color: var(--ad-text-secondary);
+  margin: 0;
+}
+
+.admin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--ad-border);
+  background: var(--ad-surface);
+  color: var(--ad-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.admin-icon-btn:hover {
+  background: var(--ad-bg);
+}
+
+/* ---------- Profile dropdown (top right) ---------- */
+
+.admin-profile {
+  position: relative;
+}
+
+.admin-profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ad-primary-light);
+  border: none;
+  border-radius: 999px;
+  padding: 5px 14px 5px 5px;
+  cursor: pointer;
+}
+
+.admin-topbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ad-primary);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-profile-text {
+  text-align: left;
+}
+
+.admin-topbar-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ad-text);
+  margin: 0;
+}
+
+.admin-topbar-role {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ad-primary);
+  margin: 0;
+}
+
+.admin-dropdown {
+  position: absolute;
+  top: 46px;
+  right: 0;
+  width: 180px;
+  background: var(--ad-surface);
+  border: 1px solid var(--ad-border);
+  border-radius: var(--ad-radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  z-index: 30;
+}
+
+.admin-dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--ad-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.admin-dropdown-item:hover {
+  background: var(--ad-bg);
+}
+
+.admin-dropdown-item.danger {
+  color: #c0392b;
+}
+
+/* ---------- Content ---------- */
+
+.admin-content {
+  padding: 28px 32px;
+}
+
+.admin-section-card {
+  background: var(--ad-surface);
+  border: 1px solid var(--ad-border);
+  border-radius: var(--ad-radius);
+  padding: 22px 24px;
+}
+
+.admin-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ad-text);
+  margin: 0 0 18px;
+}
+
+@media (max-width: 900px) {
+  .admin-sidebar {
+    width: 76px;
+    padding: 16px 8px;
+  }
+  .admin-sidebar-brand-text,
+  .admin-sidebar-section-title,
+  .admin-sidebar-item span {
+    display: none;
+  }
+  .admin-sidebar-item {
+    justify-content: center;
+  }
+  .admin-profile-text {
+    display: none;
+  }
+}
+/* ---------- Change Password page (append to AdminDashboard.css) ---------- */
+
+.admin-section-subtitle {
+  margin: 0 0 18px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.admin-required-mark {
+  color: #c0392b;
+}
+
+.admin-password-policy {
+  background: #e6f7ed;
+  border: 1px solid #c9e8d4;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.admin-password-policy-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #1f2340;
+}
+
+.admin-password-policy ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-password-policy li {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.admin-form-status.success {
+  color: #1c8a4b;
+  background: #e6f7ed;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+/* ---------- Back button ---------- */
+
+.admin-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid var(--ad-border);
+  border-radius: 8px;
+  background: var(--ad-surface);
+  color: var(--ad-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.admin-back-btn:hover {
+  background: var(--ad-primary-light);
+  color: var(--ad-primary);
+}
+
+.admin-back-btn:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Add Supervisor form ---------- */
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 420px;
+}
+
+.admin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-form-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ad-text-secondary);
+}
+
+.admin-form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--ad-border);
+  border-radius: 8px;
+  background: var(--ad-bg);
+  color: var(--ad-text);
+  font-size: 14px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.admin-form-input::placeholder {
+  color: var(--ad-text-secondary);
+}
+
+.admin-form-input:focus {
+  outline: none;
+  border-color: var(--ad-primary);
+  background: var(--ad-surface);
+}
+
+.admin-form-submit {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 8px;
+  background: var(--ad-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.admin-form-submit:hover {
+  opacity: 0.9;
+}
+
+.admin-form-submit:active {
+  transform: scale(0.98);
+}
+
+.admin-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-form-status {
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.admin-form-status.success {
+  background: rgba(76, 175, 80, 0.12);
+  color: #2e7d32;
+}
+
+.admin-form-status.error {
+  background: rgba(240, 100, 100, 0.12);
+  color: #c0392b;
+}
+
+.admin-form-status.pending {
+  background: var(--ad-primary-light);
+  color: var(--ad-primary);
+}
+
+/* ---------- Sidebar close button (mobile only) ---------- */
+
+.admin-sidebar-close {
+  display: none;
+}
+
+/* ---------- Mobile responsive ---------- */
+
+.admin-menu-btn {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--ad-border);
+  background: var(--ad-surface);
+  color: var(--ad-text);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.admin-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .admin-layout {
+    display: block; /* stop the flex row from squeezing the sidebar into the page */
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    padding: 20px 16px;
+  }
+
+  .admin-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Undo the icon-only tablet rules — mobile drawer shows full labels */
+  .admin-sidebar-brand-text,
+  .admin-sidebar-section-title,
+  .admin-sidebar-item span {
+    display: inline !important;
+  }
+
+  .admin-sidebar-item {
+    justify-content: flex-start;
+  }
+
+  .admin-sidebar-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+  }
+
+  .admin-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 40;
+  }
+
+  .admin-menu-btn {
+    display: flex;
+  }
+
+  .admin-main {
+    width: 100%;
+  }
+
+  .admin-topbar {
+    padding: 14px 16px;
+  }
+
+  .admin-topbar-title {
+    font-size: 17px;
+  }
+
+  .admin-topbar-tagline {
+    display: none; /* saves space on small screens */
+  }
+
+  .admin-profile-text {
+    display: none;
+  }
+
+  .admin-content {
+    padding: 16px;
+  }
+
+  .admin-section-card {
+    padding: 16px;
+  }
+
+  .admin-form,
+  .admin-form-input {
+    max-width: 100%;
+  }
+
+  .admin-form-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

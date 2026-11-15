@@ -1,0 +1,126 @@
+/* ---------- Role selector step ---------- */
+
+.admin-role-prompt {
+  color: var(--ad-text-secondary);
+  font-size: 13.5px;
+  margin: -10px 0 20px;
+}
+
+.admin-role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.admin-role-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border: 1px solid var(--ad-border);
+  border-radius: var(--ad-radius);
+  background: var(--ad-bg);
+  color: var(--ad-text);
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.admin-role-card:hover {
+  border-color: var(--ad-primary);
+  background: var(--ad-primary-light);
+  transform: translateY(-1px);
+}
+
+.admin-role-card-arrow {
+  color: var(--ad-primary);
+  font-size: 16px;
+}
+
+/* ---------- List header with Add button ---------- */
+
+.admin-list-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-add-btn {
+  border: none;
+  background: #2e9e5b;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.admin-add-btn:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Action cell ---------- */
+
+.admin-action-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-icon-action {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.admin-icon-action.edit {
+  background: var(--ad-primary-light);
+  color: var(--ad-primary);
+}
+
+.admin-icon-action.danger {
+  background: rgba(229, 62, 62, 0.12);
+  color: #e53e3e;
+}
+
+.admin-icon-action:hover {
+  opacity: 0.8;
+}
+
+.admin-status-toggle {
+  border: none;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
+.admin-status-toggle.deactivate {
+  background: rgba(229, 62, 62, 0.12);
+  color: #e53e3e;
+}
+
+.admin-status-toggle.activate {
+  background: rgba(46, 158, 91, 0.12);
+  color: #2e9e5b;
+}
+
+.admin-status-toggle:hover {
+  opacity: 0.85;
+}
